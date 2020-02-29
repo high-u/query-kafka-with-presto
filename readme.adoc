@@ -20,11 +20,13 @@ kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 
 
 kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic test
 
-kafka-console-producer.sh --broker-list localhost:9092 --topic test
+# kafka-console-producer.sh --broker-list localhost:9092 --topic test
+# 
+# {"name": "hoge", "age": 21}
+# {"name": "fuga", "age": 35}
+# {"name": "piyo", "age": 48}
 
-{"name": "hoge", "age": 21}
-{"name": "fuga", "age": 35}
-{"name": "piyo", "age": 48}
+kafka-console-producer.sh --broker-list localhost:9092 --topic test < /tmp/kafka.txt
 
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
 

@@ -1,0 +1,6 @@
+{"name": "hoge", "age": 21}
+{"name": "fuga", "age": 35}
+{"name": "piyo", "age": 48}
+{"name": "hoge", "age": 21}
+{"name": "fuga", "age": 35}
+{"name": "piyo", "age": 48}

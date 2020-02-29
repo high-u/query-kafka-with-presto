@@ -28,6 +28,8 @@ services:
       - ALLOW_PLAINTEXT_LISTENER=yes
     depends_on:
       - zookeeper
+    volumes:
+      - ./tmp:/tmp
   presto:
     image: prestosql/presto
     hostname: presto
