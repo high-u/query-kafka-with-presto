@@ -3,12 +3,12 @@
   "schemaName": "default",
   "topicName": "test",
   "message": {
-      "dataFormat": "raw",
+      "dataFormat": "json",
       "fields": [
           {
               "name": "name",
-              "dataFormat": "LONG",
-              "type": "BIGINT"
+              "mapping": "name",
+              "type": "VARCHAR"
           }
       ]
   }

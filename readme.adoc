@@ -40,13 +40,10 @@ show tables;
 
 describe test;
 
-select count(1) from test;
+select _message from test;
+select name from test;
 ----
 
-
-Query 20200229_031513_00004_dvcym failed: Cannot list splits for table 'test' reading topic 'test'
-
-https://github.com/prestodb/presto/blob/master/presto-kafka/src/main/java/com/facebook/presto/kafka/KafkaSplitManager.java
 
 ## xxx2
 
@@ -72,5 +69,5 @@ docker exec -it presto presto --catalog kafka --schema tpch
 
 show tables;
 
-
 ----
+
