@@ -3,13 +3,18 @@
   "schemaName": "default",
   "topicName": "test",
   "message": {
-      "dataFormat": "json",
-      "fields": [
-          {
-              "name": "name",
-              "mapping": "name",
-              "type": "VARCHAR"
-          }
-      ]
+    "dataFormat": "json",
+    "fields": [
+      {
+        "name": "name",
+        "mapping": "name",
+        "type": "VARCHAR"
+      },
+      {
+        "name": "age",
+        "mapping": "age",
+        "type": "SMALLINT"
+      }
+    ]
   }
 }

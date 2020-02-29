@@ -22,9 +22,9 @@ kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic test
 
 kafka-console-producer.sh --broker-list localhost:9092 --topic test
 
-{"name": "hoge"}
-{"name": "fuga"}
-{"name": "piyo"}
+{"name": "hoge", "age": 21}
+{"name": "fuga", "age": 35}
+{"name": "piyo", "age": 48}
 
 kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
 
@@ -39,6 +39,7 @@ show tables;
 
 describe test;
 
+select * from test;
 select _message from test;
-select name from test;
+select name, age from test where age > 30;
 ----
