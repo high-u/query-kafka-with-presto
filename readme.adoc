@@ -46,9 +46,9 @@ select count(1) from test;
 
 Query 20200229_031513_00004_dvcym failed: Cannot list splits for table 'test' reading topic 'test'
 
+https://github.com/prestodb/presto/blob/master/presto-kafka/src/main/java/com/facebook/presto/kafka/KafkaSplitManager.java
 
-
-## ためす
+## xxx2
 
 https://ishiis.net/2017/07/16/presto-kafka/
 
