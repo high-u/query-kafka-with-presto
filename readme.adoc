@@ -1,17 +1,16 @@
 = Query kafka with presto
 
-== Do not work
+== Reference
 
 * https://prestodb.io/docs/current/connector/kafka.html
 * https://prestodb.io/docs/current/connector/kafka-tutorial.html
 
-== xxx
+== Make it work
 
 [source, bash]
 ----
 docker-compose up -d
 ----
-
 
 [source, bash]
 ----
@@ -43,31 +42,3 @@ describe test;
 select _message from test;
 select name from test;
 ----
-
-
-## xxx2
-
-https://ishiis.net/2017/07/16/presto-kafka/
-
-[source, bash]
-----
-docker exec -it kafka bash
-
-cd /tmp
-
-curl -o kafka-tpch https://repo1.maven.org/maven2/de/softwareforge/kafka_tpch_0811/1.0/kafka_tpch_0811-1.0.sh
-
-chmod 755 kafka-tpch
-
-./kafka-tpch load --brokers localhost:9092 --prefix tpch. --tpch-type tiny
-
-kafka-topics.sh --list --zookeeper zookeeper:2181
-
-exit
-
-docker exec -it presto presto --catalog kafka --schema tpch
-
-show tables;
-
-----
-
