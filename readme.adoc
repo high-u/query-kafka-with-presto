@@ -1,0 +1,76 @@
+= Query kafka with presto
+
+== Do not work
+
+* https://prestodb.io/docs/current/connector/kafka.html
+* https://prestodb.io/docs/current/connector/kafka-tutorial.html
+
+== xxx
+
+[source, bash]
+----
+docker-compose up -d
+----
+
+
+[source, bash]
+----
+docker exec -it kafka bash
+
+kafka-topics.sh --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1 --topic test
+
+kafka-topics.sh --describe --bootstrap-server localhost:9092 --topic test
+
+kafka-console-producer.sh --broker-list localhost:9092 --topic test
+
+{"name": "hoge"}
+{"name": "fuga"}
+{"name": "piyo"}
+
+kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic test --from-beginning
+
+exit
+----
+
+[source, bash]
+----
+docker exec -it presto presto --catalog kafka --schema default
+
+show tables;
+
+describe test;
+
+select count(1) from test;
+----
+
+
+Query 20200229_031513_00004_dvcym failed: Cannot list splits for table 'test' reading topic 'test'
+
+
+
+## ためす
+
+https://ishiis.net/2017/07/16/presto-kafka/
+
+[source, bash]
+----
+docker exec -it kafka bash
+
+cd /tmp
+
+curl -o kafka-tpch https://repo1.maven.org/maven2/de/softwareforge/kafka_tpch_0811/1.0/kafka_tpch_0811-1.0.sh
+
+chmod 755 kafka-tpch
+
+./kafka-tpch load --brokers localhost:9092 --prefix tpch. --tpch-type tiny
+
+kafka-topics.sh --list --zookeeper zookeeper:2181
+
+exit
+
+docker exec -it presto presto --catalog kafka --schema tpch
+
+show tables;
+
+
+----

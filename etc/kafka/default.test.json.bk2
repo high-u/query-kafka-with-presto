@@ -1,0 +1,15 @@
+{
+  "tableName": "test",
+  "schemaName": "default",
+  "topicName": "test",
+  "message": {
+      "dataFormat": "raw",
+      "fields": [
+          {
+              "name": "name",
+              "dataFormat": "LONG",
+              "type": "BIGINT"
+          }
+      ]
+  }
+}
