@@ -6,14 +6,35 @@
     "dataFormat": "json",
     "fields": [
       {
+        "name": "id",
+        "mapping": "id",
+        "type": "VARCHAR"
+      },
+      {
         "name": "name",
         "mapping": "name",
         "type": "VARCHAR"
       },
       {
-        "name": "age",
-        "mapping": "age",
-        "type": "SMALLINT"
+        "name": "datetime",
+        "mapping": "datetime",
+        "dataFormat": "iso8601",
+        "type": "TIMESTAMP"
+      },
+      {
+        "name": "unixtime",
+        "mapping": "unixtime",
+        "type": "BIGINT"
+      },
+      {
+        "name": "term",
+        "mapping": "term",
+        "type": "INTEGER"
+      },
+      {
+        "name": "value",
+        "mapping": "value",
+        "type": "INTEGER"
       }
     ]
   }

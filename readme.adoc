@@ -43,5 +43,7 @@ describe test;
 
 select * from test;
 select _message from test;
-select name, age from test where age > 30;
+select id, name, datetime, unixtime, value from test limit 20;
+select id, name, datetime, unixtime, value from test where datetime >= CAST('2011-03-09 04:00:00' AS TIMESTAMP);
+select name, max_by(datetime, unixtime) as max_value from test group by name;
 ----
